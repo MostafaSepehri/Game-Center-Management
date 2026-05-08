@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: iranyekanweblightfanum;
+}
+
+@font-face {
+  font-family: 'iranyekanwebboldfanum';
+  src: url() format('woff'), url('fonts/iranyekanwebboldfanum.woff2') format('woff2'), url('../../demo/assets/fonts/iranyekanwebboldfanum.svg#iranyekanwebboldfanum') format('svg'), url('fonts/iranyekanwebboldfanum.eot'), url('fonts/iranyekanwebboldfanum.eot?#iefix') format('embedded-opentype'), url('fonts/iranyekanwebboldfanum.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'iranyekanweblightfanum';
+  src: url('fonts/iranyekanweblightfanum.woff') format('woff'), url('fonts/iranyekanweblightfanum.woff2') format('woff2'), url('fonts/iranyekanweblightfanum.svg#iranyekanweblightfanum') format('svg'), url('fonts/iranyekanweblightfanum.eot'), url('fonts/iranyekanweblightfanum.eot?#iefix') format('embedded-opentype'), url('fonts/iranyekanweblightfanum.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* استایل صفحه هنگام چاپ */
+@media print {
+  @page {
+    size: 80mm auto;
+    /* عرض 8 سانتی، ارتفاع خودکار */
+    margin: 0mm;
+    /* بدون حاشیه */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .receipt {
+    width: 72mm;
+    /* عرض قابل چاپ واقعی */
+    margin: 0 auto;
+    padding: 2mm 2mm 5mm 2mm;
+    font-family: 'Courier New', 'Tahoma', monospace;
+    font-size: 10pt;
+    box-shadow: none;
+  }
+
+  /* مخفی کردن دکمه در هنگام چاپ */
+  .no-print {
+    display: none;
+  }
+
+  /* برش خودکار بعد از رسید */
+  .receipt:after {
+    content: '';
+    display: block;
+    page-break-after: always;
+  }
+}
+
+/* استایل نمایش در صفحه (قبل از چاپ) */
+body {
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Tahoma', 'Courier New', monospace;
+  padding: 20px;
+}
+
+.receipt {
+  width: 74mm;
+  background: white;
+  padding: 3mm 3mm 6mm 3mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* استایل‌های رسید */
+.header {
+  text-align: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #000;
+}
+
+.shop-name {
+  font-size: 16pt;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.shop-sub {
+  font-size: 8pt;
+  color: #555;
+}
+
+.info-row {
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px dotted #ccc;
+  font-size: 9pt;
+}
+
+.info-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.customer-info {
+  margin: 8px 0;
+  padding: 5px;
+  border: 1px solid #ddd;
+  font-size: 9pt;
+}
+
+.customer-info div {
+  margin-bottom: 3px;
+}
+
+/* جدول محصولات */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 9pt;
+}
+
+.items-table th {
+  border-bottom: 1px solid #000;
+  padding: 4px 2px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.items-table td {
+  padding: 4px 2px;
+  border-bottom: 1px dotted #ccc;
+  text-align: center;
+}
+
+.items-table td:first-child {
+  text-align: right;
+}
+
+.total-row {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 2px solid #000;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.grand-total {
+  font-size: 12pt;
+  font-weight: bold;
+  border-top: 1px dashed #000;
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed #000;
+  font-size: 8pt;
+}
+
+.footer div {
+  margin-bottom: 3px;
+}
+
+.thankyou {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.button-group {
+  text-align: center;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  background: #e0e0e0;
+  padding: 10px;
+}

@@ -1,0 +1,552 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-wrapper">
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="card">
+              <div class="d-flex justify-content-between">
+                <div class="pt-3 ps-3">
+                  <!-- <button type="button" class="btn btn-label-primary btn-fab demo waves-effect me-3"  data-bs-toggle="modal" data-bs-target="#onboardImageModalNew"><span class="tf-icons mdi mdi-checkbox-marked-circle-outline me-1 mdi-24px"></span>جدید</button> -->
+                  <button type="button" class="btn btn-icon btn-label-secondary btn-fab demo waves-effect"><span
+                      class="tf-icons mdi mdi-clipboard-list mdi-24px"></span></button>
+                </div>
+                <!-- <h6 class="badge bg-label-dark p-2 m-0 mt-3 me-3 align-items-center justify-content-center d-flex">12:23:09<i class="tf-icons mdi mdi-clock-outline ps-1"></i></h6> -->
+              </div>
+
+              <hr>
+              <div class="table-responsive text-nowrap">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>سرویس</th>
+                      <th>ایستگاه</th>
+                      <th>تعرفه</th>
+                      <th>زمان</th>
+                      <th>مبلغ</th>
+                      <th>شروع/صورتحساب</th>
+                      <th>بوفه</th>
+                      <th>VIP</th>
+                      <th>هشدار</th>
+                      <th>وضعیت</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-border-bottom-0">
+
+                    <tr>
+                      <td><i class="mdi mdi-microsoft-xbox me-1 text-success mdi-24px"></i>Xbox</td>
+                      <td data-bs-toggle="modal" data-bs-target="#onboardImageModalStation" class="cursor-pointer">شماره
+                        7</td>
+                      <td><a href="#" class="text-secondary" data-bs-toggle="modal"
+                          data-bs-target="#onboardImageModalTarefe">1 نفره</a></td>
+                      <td data-bs-toggle="modal" data-bs-target="#onboardImageModalStartTime">12:00:00</td>
+                      <td>20,000 <small class="text-muted">تومان</small></td>
+                      <td><button type="button" class="btn btn-label-primary btn-fab demo waves-effect me-3"
+                          data-bs-toggle="modal" data-bs-target="#onboardImageModalPlay"><span
+                            class="tf-icons mdi mdi-play me-1 mdi-10px"></span>شروع</button>
+                      </td>
+                      <td><i class="mdi mdi-cart-outline mdi-24px cursor-pointer" data-bs-toggle="modal"
+                          data-bs-target="#buffetModal"></i></td>
+                      <td><i class="mdi mdi-crown mdi-24px cursor-pointer" data-bs-toggle="modal"
+                          data-bs-target="#onboardImageModalVip"></i></td>
+                      <td><span class="badge bg-label-warning">22:01</span>
+                      </td>
+                      <td><small class="badge bg-label-success">آماده</small></td>
+                    </tr>
+
+                    <tr>
+                      <td><i class="mdi mdi-sony-playstation me-1 text-dark mdi-24px"></i>PS5</td>
+                      <td>شماره 7</td>
+                      <td><a href="#" class="text-secondary" data-bs-toggle="modal"
+                          data-bs-target="#onboardImageModalTarefe">1 نفره</a></td>
+                      <td data-bs-toggle="modal" data-bs-target="#onboardImageModalStartTime">12:00:00</td>
+                      <td>20,000 <small class="text-muted">تومان</small></td>
+                      <td><button type="button" class="btn btn-label-primary btn-fab demo waves-effect me-3"
+                          data-bs-toggle="modal" data-bs-target="#onboardImageModalNew"><span
+                            class="tf-icons mdi mdi-play me-1 mdi-10px"></span>شروع</button>
+                      </td>
+                      <td><i class="mdi mdi-cart-outline mdi-24px cursor-pointer" data-bs-toggle="modal"
+                          data-bs-target="#onboardImageModalEndTime"></i></td>
+                      <td><i class="mdi mdi-crown mdi-24px cursor-pointer" data-bs-toggle="modal"
+                          data-bs-target="#invoiceModal"></i></td>
+                      <td><span class="badge bg-label-success">22:01</span>
+                      </td>
+                      <td><small class="badge bg-label-danger">در حال کار</small></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- invoice -->
+            <div class="modal fade" id="invoiceModal">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title">صورتحساب ایستگاه شماره ۳</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+
+                  <div class="modal-body">
+
+                    <div class="row">
+
+                      <!-- راست -->
+                      <div class="col-md-8">
+                        <h6 class="mb-2">مشتری</h6>
+                        <div class="form-floating form-floating-outline mb-4">
+                          <select id="CustomerName" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            <option value="d">مشتری</option>
+                            <option value="55000">اسپرسو</option>
+                            <option value="40000">چاکلز</option>
+                            <option value="15000">آب معدنی</option>
+                            <option value="30000">مزمز</option>
+                            <option value="20000">بای کیت</option>
+                            <option value="50000">پفک</option>
+                          </select>
+                        </div>
+                        <h6 class="mb-2">سبد خرید</h6>
+
+                        <table class="table table-bordered text-center">
+                          <thead class="table-light">
+                            <tr>
+                              <th>نام کالا</th>
+                              <th>تعداد</th>
+                              <th>فی</th>
+                              <th>جمع کل</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="4">آیتمی وجود ندارد</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+
+                        <h6 class="mt-4 mb-2">تاریخچه بازی های قبلی</h6>
+
+                        <table class="table table-bordered text-center">
+                          <thead class="table-light">
+                            <tr>
+                              <th>نام ایستگاه</th>
+                              <th>تعرفه</th>
+                              <th>فی</th>
+                              <th>مدت بازی</th>
+                              <th>مبلغ بازی</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>شماره ۳</td>
+                              <td>دو نفره</td>
+                              <td>60000</td>
+                              <td>00:00:25</td>
+                              <td>417</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+                      <!-- ستون چپ -->
+                      <div class="col-md-4">
+
+                        <div class="bg-light p-3 rounded mb-3">
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>ایستگاه شماره :</span>
+                            <span>۳</span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>مدت بازی :</span>
+                            <span>00:00:35</span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>مبلغ بازی فعلی :</span>
+                            <span>50</span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>سایر بازی ها :</span>
+                            <span>417</span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>مبلغ سبد خرید :</span>
+                            <span>0</span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>مبلغ خدمات ویژه :</span>
+                            <span>0</span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>تخفیف :</span>
+                            <span>
+                              <div class="d-inline-flex align-items-center gap-2">
+                                <span>%</span>
+
+                                <input type="number" class="form-control form-control-sm" value="0" min="0" max="100"
+                                  step="1" style="width:70px">
+                              </div>
+                            </span>
+                          </div>
+
+                          <div class="d-flex justify-content-between mb-2">
+                            <span>تخفیف سیستمی:</span>
+                            <span>0%</span>
+                          </div>
+
+                        </div>
+
+                        <div class="bg-light p-3 rounded">
+                          <label class="form-label">برداشت / طرف حساب</label>
+                          <textarea class="form-control"></textarea>
+                        </div>
+
+                        <div class="mt-4 rounded">
+                          <span> قابل پرداخت: <i class="mdi mdi-arrow-up-bold-circle mdi-24px text-primary"></i>
+                            <h5 class="pe-1 ps-1 d-inline"><strong>120,000</strong></h5><i
+                              class="mdi mdi-arrow-down-bold-circle mdi-24px text-danger"></i>
+                          </span>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <span>دریافتی‌ها</span>
+                          <div class="row">
+                            <div class="col-md">
+                              <div class="row">
+                                <div class="col-md mb-md-0 mb-2">
+                                  <div class="form-check custom-option custom-option-icon"><label
+                                      class="form-check-label custom-option-content" for="customRadioSvg1"><span
+                                        class="custom-option-body"><img src="../../assets/img/icons/unicons/paypal.png"
+                                          class="w-px-40 mb-2" alt="paypal"><span
+                                          class="custom-option-title">POS</span><input name="customRadioSvg"
+                                          class="form-check-input" type="radio" value="" id="customRadioSvg1"
+                                          checked=""></label></div>
+                                </div>
+                                <div class="col-md mb-md-0 mb-2">
+                                  <div class="form-check custom-option custom-option-icon"><label
+                                      class="form-check-label custom-option-content" for="customRadioSvg2"><span
+                                        class="custom-option-body"><img src="../../assets/img/icons/unicons/wallet.png"
+                                          class="w-px-40 mb-2" alt="wallet"><span class="custom-option-title">کیف
+                                          پول</span></span><input name="customRadioSvg" class="form-check-input"
+                                        type="radio" value="" id="customRadioSvg2"></label></div>
+                                </div>
+                                <div class="col-md">
+                                  <div class="form-check custom-option custom-option-icon"><label
+                                      class="form-check-label custom-option-content" for="customRadioSvg3"><span
+                                        class="custom-option-body"><img
+                                          src="../../assets/img/icons/unicons/cc-success.png" class="w-px-40 mb-2"
+                                          alt="cc-success"><span class="custom-option-title">نقدی</span></span><input
+                                        name="customRadioSvg" class="form-check-input" type="radio" value=""
+                                        id="customRadioSvg3"></label></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="">
+                  <div class="modal-footer dir-rtl">
+                    <button type="button" class="btn btn-label-primary btn-fab demo waves-effect me-3"><span
+                        class="tf-icons mdi mdi-checkbox-marked-circle-outline me-1 mdi-10px"></span>تسویه و
+                      بستن</button>
+                    <button type="button" class="btn btn-label-primary btn-fab demo waves-effect me-3"><span
+                        class="tf-icons mdi mdi-printer me-1 mdi-10px"></span>چاپ صورتحساب</button>
+                    <button type="button" class="btn btn-label-primary btn-fab demo waves-effect me-3"><span
+                        class="tf-icons mdi mdi-clock-outline me-1 mdi-10px"></span>بعدا تسویه شود/بستن</button>
+                    <button type="button" class="btn btn-label-dark btn-fab demo waves-effect me-3">خروج</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- end -->
+            <!-- Boofe2 -->
+            <div class="modal fade" id="buffetModal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title">انتخاب از بوفه</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+
+                  <div class="modal-body">
+
+                    <div class="row">
+
+                      <!-- ستون انتخاب -->
+                      <div class="col-md-6">
+
+                        <div class="form-floating form-floating-outline">
+                          <select id="buffetSelect" class="select2 form-select form-select-lg" data-allow-clear="true">
+                            <option value="">انتخاب کنید</option>
+                            <option value="55000">اسپرسو</option>
+                            <option value="40000">چاکلز</option>
+                            <option value="15000">آب معدنی</option>
+                            <option value="30000">مزمز</option>
+                            <option value="20000">بای کیت</option>
+                            <option value="50000">پفک</option>
+                            <span class="select2-selection__placeholder">Select</span>
+                          </select>
+                        </div>
+
+                      </div>
+
+                      <!-- ستون سبد -->
+                      <div class="col-md-6">
+
+                        <ul class="list-group" id="cart"></ul>
+
+                        <div class="mt-3 fw-bold">
+                          جمع کل: <span id="total">0</span> تومان
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- end -->
+            <!-- change game station -->
+            <div>
+              <div class="col">
+                <div class="modal-onboarding modal fade animate__animated" id="onboardImageModalStation" tabindex="-1"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content text-center">
+                      <div class="modal-body p-0">
+
+                        <div class="onboarding-media">
+                          <div class="mx-2"></div>
+                        </div>
+                        <div class="onboarding-content mb-0">
+                          <h4 class="onboarding-title text-body mt-0">تغییر رزرو</h4>
+                          <div class="row g-4">
+                            <form action="">
+                              <div data-select2-id="20" class="form-floating form-floating-outline">
+                                <div class="form-floating form-floating-outline mt-3">
+                                  <select class="form-select">
+                                    <option value="AK">PC | 11</option>
+                                    <option value="AK">PS5 | 2</option>
+                                    <option value="AK">PS4 | 1</option>
+                                    <option value="AK">Xbox | 4</option>
+                                  </select>
+                                  <label for="state">نوع خدمت | شماره</label>
+                                </div>
+
+                                <div class="form-floating form-floating-outline mt-3 mb-3">
+                                  <select class="form-select" data-allow-clear="true">
+                                    <option value="AK">1 نفره</option>
+                                    <option value="AK">2 نفره</option>
+                                    <option value="AK">3 نفره</option>
+                                    <option value="AK">4 نفره</option>
+                                  </select>
+                                  <label for="state">نوع تعرفه</label>
+                                </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer border-0 m-2">
+                        <button type="button" class="btn btn-label-secondary"
+                          data-bs-dismiss="modal">بستن</button><button type="button"
+                          class="btn btn-primary">ذخیره</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End -->
+            <!-- change Tarefe -->
+            <div>
+              <div class="col">
+                <div class="modal-onboarding modal fade animate__animated" id="onboardImageModalTarefe" tabindex="-1"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content text-center">
+                      <div class="modal-body p-0">
+
+                        <div class="onboarding-media">
+                          <div class="mx-2"></div>
+                        </div>
+                        <div class="onboarding-content mb-0">
+                          <h4 class="onboarding-title text-body mt-0">تغییر تعرفه</h4>
+                          <div class="row g-4">
+                            <form action="">
+                              <div class="form-floating form-floating-outline mt-3 mb-3">
+                                <select class="form-select" data-allow-clear="true">
+                                  <option value="AK">1 نفره</option>
+                                  <option value="AK">2 نفره</option>
+                                  <option value="AK">3 نفره</option>
+                                  <option value="AK">4 نفره</option>
+                                </select>
+                                <label for="state">نوع تعرفه</label>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer border-0 m-2">
+                        <button type="button" class="btn btn-label-secondary"
+                          data-bs-dismiss="modal">بستن</button><button type="button"
+                          class="btn btn-primary">ذخیره</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End -->
+            <!-- Play -->
+            <div>
+              <div class="col">
+                <div class="modal-onboarding modal fade animate__animated" id="onboardImageModalPlay" tabindex="-1"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content text-center">
+                      <div class="modal-body p-0">
+                        <div class="row">
+                          <div class="col">
+                            <div class="card p-0" data-select2-id="24">
+                              <div class="card-header p-0">
+                                <ul class="nav nav-tabs" role="tablist">
+                                  <li class="nav-item" role="presentation"><button class="nav-link waves-effect active"
+                                      data-bs-toggle="tab" data-bs-target="#form-tabs-personal" role="tab"
+                                      aria-selected="true">شروع با محدودیت</button></li>
+                                  <li class="nav-item" role="presentation"><button class="nav-link waves-effect"
+                                      data-bs-toggle="tab" data-bs-target="#form-tabs-account" role="tab"
+                                      aria-selected="false" tabindex="-1">شروع از زمان دلخواه</button></li>
+                                  <span class="tab-slider"
+                                    style="left: 1129.39px; width: 145.609px; bottom: 0px;"></span>
+                                </ul>
+                              </div>
+                              <div class="tab-content pt-4" data-select2-id="23">
+                                <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel"
+                                  data-select2-id="form-tabs-personal">
+                                  <form class="mt-0" data-select2-id="22">
+                                    <div class="row mt-0" data-select2-id="21">
+                                      <div class="mb-3">
+                                        <label class="form-label">نوع محدودیت</label>
+                                        <select class="form-select" id="limitType">
+                                          <option value="">انتخاب کنید</option>
+                                          <option value="time">محدودیت زمان</option>
+                                          <option value="amount">محدودیت مبلغ</option>
+                                        </select>
+                                      </div>
+
+                                      <div class="mb-3 d-none" id="timeField">
+                                        <label class="form-label">مدت زمان</label>
+                                        <input type="text" id="timePicker" class="form-control" dir="rtl"
+                                          placeholder="انتخاب زمان">
+                                      </div>
+
+                                      <div class="mb-3 d-none" id="amountField">
+                                        <label class="form-label">مبلغ <small>(تومان)</small></label>
+                                        <input type="text" id="amount" class="form-control money-input" placeholder="10,000">
+                                      </div>
+
+                                    </div>
+                                    <div class="pt-4">
+                                      <button type="submit"
+                                        class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">ارسال</button><button
+                                        type="reset" class="btn btn-label-secondary waves-effect"
+                                        data-bs-dismiss="modal">لغو کنید</button>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                                  <form class="mt-0">
+                                    <label class="form-label">مدت زمان</label>
+                                    <input type="text" id="timePicker" class="form-control" dir="rtl"
+                                      placeholder="انتخاب زمان">
+                                    <div class="pt-4">
+                                      <button type="submit"
+                                        class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">ارسال</button><button
+                                        type="reset" class="btn btn-label-secondary waves-effect"
+                                        data-bs-dismiss="modal">لغو کنید</button>
+                                    </div>
+                                  </form>
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+          <!-- Boofe -->
+          <div>
+            <div class="col">
+              <div class="modal-onboarding modal fade animate__animated" id="onboardImageModalVip" tabindex="-1"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content text-center">
+                    <div class="modal-body p-0">
+
+                      <div class="onboarding-media">
+                        <div class="mx-2"></div>
+                      </div>
+                      <div class="onboarding-content mb-0">
+                        <h4 class="onboarding-title text-body mt-0">خدمات VIP</h4>
+                        <div class="row g-4">
+                          <form action="">
+                            <div class="form-floating form-floating-outline mb-3">
+                              <div class="position-relative" data-select2-id="124"><select id="select2Multiple"
+                                  class="select2 form-select select2-hidden-accessible" multiple=""
+                                  data-select2-id="select2Multiple" tabindex="-1" aria-hidden="true">
+                                  <optgroup label="Alaskan/Hawaiian Time Zone" data-select2-id="127">
+                                    <option value="NY" data-select2-id="171">نیویورک</option>
+                                    <option value="NC" data-select2-id="172">کارولینای شمالی</option>
+                                    <option value="OH" data-select2-id="173">اوهایو</option>
+                                    <option value="PA" data-select2-id="174">پنسیلوانیا</option>
+                                    <option value="RI" data-select2-id="175">رود آیلند</option>
+                                    <option value="SC" data-select2-id="176">کارولینای جنوبی</option>
+                                    <option value="VT" data-select2-id="177">ورمونت</option>
+                                    <option value="VA" data-select2-id="178">ویرجینیا</option>
+                                    <option value="WV" data-select2-id="179">ویرجینیای غربی</option>
+                                  </optgroup>
+                                </select>
+                              </div><label for="select2Multiple">خدمات</label>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer border-0 m-2">
+                      <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">بستن</button><button
+                        type="button" class="btn btn-primary">ذخیره</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+            </div>
+{% endblock %}
