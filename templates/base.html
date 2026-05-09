@@ -86,11 +86,10 @@
           <li class="menu-item {% block a%}{% endblock %}"><a href="{% url 'sessions_app:index' %}" class="menu-link"><i class="menu-icon tf-icons mdi mdi-table"></i>
               <div>داشبورد</div>
             </a></li>
-            <li class="menu-item {% block c%}{% endblock %}">
-            <a href="" class="menu-link menu-toggle waves-effect"><i class="menu-icon tf-icons mdi mdi-information"></i><div>اطلاعات پایه</div></a><ul class="menu-sub">
-            <li class="menu-item {% block b%}{% endblock %}"><a href="{% url 'stations:index' %}" class="menu-link">ایستگاه‌ها</a></li>
-            </ul>
-            </li>
+            <li class="menu-header fw-light mt-4"><span class="menu-header-text">اطلاعات پایه</span></li>
+            <li class="menu-item {% block b%}{% endblock %}"><a href="{% url 'stations:index' %}" class="menu-link"><i class="menu-icon tf-icons mdi mdi-table"></i>
+              <div>ایستگاه‌ها</div>
+            </a></li>
         </ul>
         <li class="menu-item"><a href="#" target="_blank" class="menu-link"><i
               class="menu-icon tf-icons mdi mdi-logout"></i>
