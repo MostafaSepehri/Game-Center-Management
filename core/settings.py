@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'gamenets',
     'stations',
     'sessions_app',
+    # 'inventory',
+    # 'customers',
+    # 'reservations'
 ]
 
 MIDDLEWARE = [

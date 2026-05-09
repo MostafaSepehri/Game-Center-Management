@@ -7,8 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('gamenets/', include('gamenets.urls')),
-    path('sessions/', include('sessions_app.urls')),
-    path('stations/', include('stations.urls')),
+    path('', include('sessions_app.urls')),
+    path('base-informations/', include('stations.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
