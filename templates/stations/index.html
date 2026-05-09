@@ -44,12 +44,9 @@
                       <span class="badge bg-label-dark me-1">غیرفعال</span>
                     {% endif %}
                   </td>
-                  <td>
-                    <div class="dropdown">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></button><div class="dropdown-menu">
-                        <a class="dropdown-item waves-effect edit-btn" href="#" data-bs-toggle="modal" data-bs-target="#onboardImageEdit" data-id="{{ station.id }}" data-name="{{ station.name }}" data-type="{{ station.station_type }}" data-status="{{ station.status }}"><i class="mdi mdi-pencil-outline me-1"></i>ویرایش کنید</a><a class="dropdown-item waves-effect del-btn" data-bs-toggle="modal" data-bs-target="#onboardImageDelete" href="javascript:void(0);" data-id="{{ station.id }}" data-name="{{ station.name }}"><i class="mdi mdi-trash-can-outline me-1"></i>حذف</a>
-                      </div>
-                    </div>
+                  <td style="width:150px;">
+                    <a class="badge bg-label-primary edit-btn" href="#" data-bs-toggle="modal" data-bs-target="#onboardImageEdit" data-id="{{ station.id }}" data-name="{{ station.name }}" data-type="{{ station.station_type }}" data-status="{{ station.status }}"><i class="mdi mdi-pencil-outline me-1"></i>ویرایش کنید</a>
+                    <a class="badge bg-label-danger del-btn" data-bs-toggle="modal" data-bs-target="#onboardImageDelete" href="javascript:void(0);" data-id="{{ station.id }}" data-name="{{ station.name }}"><i class="mdi mdi-trash-can-outline me-1"></i>حذف</a>
                   </td>
                 </tr>
               {% endfor %}
